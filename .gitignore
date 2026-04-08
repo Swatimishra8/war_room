@@ -1,0 +1,161 @@
+# Environment and Secret Files
+.env
+.env.local
+.env.production
+.env.staging
+.env.development
+*.env
+secrets.json
+config/secrets.yaml
+config/production.yaml
+*.key
+*.pem
+*.p12
+*.pfx
+
+# API Keys and Credentials
+openai_key.txt
+api_keys.txt
+credentials.json
+auth_tokens.txt
+*.credentials
+
+# Python Cache and Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+.ENV/
+pyvenv.cfg
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# PyCharm
+.idea/
+
+# Spyder
+.spyderproject
+.spyproject
+
+# Rope
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Output and Generated Files
+output/*.json
+output/*.yaml
+output/*.yml
+!output/.gitkeep
+logs/
+*.log
+*.out
+
+# Temporary Files
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Database Files
+*.db
+*.sqlite
+*.sqlite3
+
+# Coverage Reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Data Files (optional - uncomment if you don't want to track data)
+# data/*.json
+# data/*.csv
+# data/*.xlsx
+
+# Model Files (large ML models)
+models/*.pkl
+models/*.joblib
+models/*.h5
+models/*.pb
+*.model
+
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Archive Files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Local Configuration Overrides
+config/local.yaml
+config/local.json
+local_config.*
