@@ -1,0 +1,128 @@
+# War Room Multi-Agent System Configuration
+
+# Output settings
+output_format: "json"  # json or yaml
+enable_detailed_logging: true
+
+# Decision making parameters
+confidence_threshold: 0.7
+consensus_weight:
+  product_manager: 0.3    # PM has highest weight for business decisions
+  data_analyst: 0.3       # Data analyst has high weight for technical decisions  
+  marketing: 0.2          # Marketing has moderate weight for customer impact
+  risk: 0.2              # Risk agent has moderate weight but can veto
+
+# Decision thresholds
+decision_thresholds:
+  rollback_threshold: 0.8   # If weighted risk score > 0.8, recommend rollback
+  pause_threshold: 0.6      # If weighted risk score > 0.6, recommend pause
+
+# Agent-specific settings
+agents:
+  product_manager:
+    success_criteria:
+      feature_adoption_rate:
+        target: 25.0
+        minimum: 15.0
+      error_rate:
+        maximum: 2.0
+        critical: 3.0
+      user_satisfaction:
+        minimum: 0.2
+        target: 0.4
+  
+  data_analyst:
+    anomaly_sensitivity: 2.0  # Standard deviations for anomaly detection
+    critical_thresholds:
+      error_rate: 2.0
+      api_latency_p95: 400
+      support_ticket_volume: 200
+      activation_conversion: 10.0
+      d1_retention: 60.0
+      payment_success_rate: 95.0
+  
+  marketing:
+    communication_thresholds:
+      negative_sentiment_critical: 0.6  # 60% negative feedback
+      negative_sentiment_high: 0.4      # 40% negative feedback
+      critical_issues_threshold: 5       # Number of critical feedback items
+      sentiment_score_critical: -0.4     # Average sentiment score
+      sentiment_score_warning: -0.2      # Average sentiment score
+  
+  risk:
+    risk_categories:
+      technical:
+        weight: 0.3
+        thresholds:
+          critical: 0.8
+          high: 0.6
+          medium: 0.4
+      business:
+        weight: 0.25
+        thresholds:
+          critical: 0.8
+          high: 0.6
+          medium: 0.4
+      operational:
+        weight: 0.2
+        thresholds:
+          critical: 0.8
+          high: 0.6
+          medium: 0.4
+      reputation:
+        weight: 0.15
+        thresholds:
+          critical: 0.8
+          high: 0.6
+          medium: 0.4
+      strategic:
+        weight: 0.1
+        thresholds:
+          critical: 0.8
+          high: 0.6
+          medium: 0.4
+
+# Communication settings
+communication:
+  crisis_escalation_path:
+    - "Customer Success Manager"
+    - "VP Customer Experience" 
+    - "CMO"
+    - "CEO"
+  
+  response_timelines:
+    immediate:
+      initial_response: "Within 2 hours"
+      detailed_update: "Within 6 hours"
+      resolution_update: "Within 24 hours"
+    urgent:
+      initial_response: "Within 24 hours"
+      detailed_update: "Within 48 hours"
+      resolution_update: "Within 1 week"
+    normal:
+      initial_response: "Within 1 week"
+      detailed_update: "As needed"
+      resolution_update: "As needed"
+
+# Monitoring and alerting
+monitoring:
+  enhanced_monitoring_triggers:
+    - "Decision: Proceed with concerns"
+    - "Confidence score < 0.7"
+    - "Critical risks > 0"
+  
+  alert_frequencies:
+    critical: "Every 15 minutes"
+    high: "Every hour"
+    medium: "Every 4 hours"
+    low: "Daily"
+
+# Data quality requirements
+data_quality:
+  minimum_feedback_samples: 20
+  minimum_metric_data_points: 168  # 1 week of hourly data
+  required_metrics:
+    - "error_rate"
+    - "api_latency_p95" 
+    - "daily_active_users"
+    - "feature_adoption_rate"
